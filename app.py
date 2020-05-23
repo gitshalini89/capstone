@@ -4,7 +4,7 @@ from sqlalchemy import exc
 import json
 from flask_cors import CORS
 import random
-from auth.auth import AuthError, requires_auth
+from auth import AuthError, requires_auth
 from models import setup_db, Actors, Movies
 
 
