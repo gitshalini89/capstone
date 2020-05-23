@@ -19,7 +19,8 @@ def create_app(test_config=None):
         try:
 
             return jsonify({
-                'Message': 'Welcome to Casting Agency App'
+                'success': True,
+                'Message': 'Casting Agency App is working fine'
             })
 
         except AttributeError:
