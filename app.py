@@ -49,15 +49,14 @@ def create_app(test_config=None):
         u_id = kwargs['actor_id']
 
         try:
-            actor = Actors.query.filter(Actors.id == u_id).one_or_none()
-            actors = [d.format() for d in actor]
+            actors = Actors.query.filter(Actors.id == u_id).one_or_none()
 
-            if len(actors) == 0:
+            if actors is None:
                 abort(404)
 
             return jsonify({
                 'success': True,
-                'actors': actors
+                'actors': actors.format()
             })
 
         except AttributeError:
@@ -88,15 +87,14 @@ def create_app(test_config=None):
         u_id = kwargs['movie_id']
 
         try:
-            movie = Movies.query.filter(Movies.id == u_id).one_or_none()
-            movies = [d.format() for d in movie]
+            movies = Movies.query.filter(Movies.id == u_id).one_or_none()
 
-            if len(movies) == 0:
+            if movies is None:
                 abort(404)
 
             return jsonify({
                 'success': True,
-                'movies': movies
+                'movies': movies.format()
             })
 
         except AttributeError:
