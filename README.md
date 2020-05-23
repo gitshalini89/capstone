@@ -124,7 +124,8 @@ No authentication required. This is to check if the APP is up and running.
 
 ```json
 {
-    "Message": "Welcome to Casting Agency App"
+    "Message": "Casting Agency App is working fine",
+    "success": true
 }
 ```
 
