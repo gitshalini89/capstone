@@ -6,10 +6,30 @@ This project is the final project of the Udacity Full Stack Developer Nano Degre
 
 I decided to implement a RESTful API for a Casting Agency that is responsible for creating movies and managing and assigning actors to those movies.
 
-### Roles:
+### Roles and Permissions:
+
 1. Casting Assistant
+    * get:actors
+    * get:movies
+
 2. Casting Director
+    * delete:actors
+    * get:actors
+    * get:movies
+    * patch:actors
+    * patch:movies
+    * post:actors
+
 3. Executive Producer
+    * delete:actors
+    * delete:movies
+    * get:actors
+    * get:movies
+    * patch:actors
+    * patch:movies
+    * post:actors
+    * post:movies
+    
 
 ## Getting Started
 
