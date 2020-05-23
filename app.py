@@ -8,18 +8,21 @@ from auth import AuthError, requires_auth
 from models import setup_db, Actors, Movies
 
 
-
 def create_app(test_config=None):
     app = Flask(__name__)
     setup_db(app)
     CORS(app)
 
-    def after_request(response):
-        response.headers.add('Access-Control-Allow-Headers',
-                             'Content-Type, Authorization, true')
-        response.headers.add('Access-Control-Allow-Methods',
-                             'GET, POST, DELETE, PATCH')
-        return response
+    @app.route('/', methods=['GET'])
+    def get_api_request(*args, **kwargs):
+        try:
+
+            return jsonify({
+                'Message': 'Welcome to Casting Agency App'
+            })
+
+        except AttributeError:
+            abort(422)
 
     @app.route('/actors', methods=['GET'])
     @requires_auth('get:actors')
@@ -309,6 +312,7 @@ def create_app(test_config=None):
         return response
 
     return app
+
 
 app = create_app()
 
