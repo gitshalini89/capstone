@@ -3,7 +3,7 @@ import unittest
 import json
 
 from flask_sqlalchemy import SQLAlchemy
-from models import setup_db, Actors, Movies
+from database.models import setup_db, Actors, Movies
 from app import create_app
 
 
@@ -14,12 +14,8 @@ class CapstoneTestCase(unittest.TestCase):
         """Define test variables and initialize app."""
         self.app = create_app()
         self.client = self.app.test_client()
-        self.database_user = 'udacity'
-        self.database_pass = 'admin'
-        self.database_name = "capstone_test"
-        self.database_path = "postgresql://{}:{}@{}/{}".\
-            format(self.database_user , self.database_pass, 'localhost:5433', self.database_name)
-        setup_db(self.app, self.database_path)
+        self.db_path = os.environ['DATABASE_URL']
+        setup_db(self.app, self.db_path)
 
         # binds the app to the current context
         with self.app.app_context():
