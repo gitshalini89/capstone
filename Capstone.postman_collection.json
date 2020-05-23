@@ -72,7 +72,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -89,6 +89,51 @@
 							],
 							"path": [
 								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e079e671-bbd7-4df0-b945-7e089dd24863",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-app-shalini.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"capstone-app-shalini",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
 							]
 						}
 					},
@@ -121,7 +166,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -138,6 +183,51 @@
 							],
 							"path": [
 								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8422c5b7-c8fd-41b7-8066-90fd51023e0e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-app-shalini.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"capstone-app-shalini",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
 							]
 						}
 					},
@@ -165,7 +255,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -218,7 +308,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -226,7 +316,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://capstone-app-shalini.herokuapp.com/actors/38",
+							"raw": "https://capstone-app-shalini.herokuapp.com/actors/2",
 							"protocol": "https",
 							"host": [
 								"capstone-app-shalini",
@@ -235,7 +325,7 @@
 							],
 							"path": [
 								"actors",
-								"38"
+								"2"
 							]
 						}
 					},
@@ -263,7 +353,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -317,7 +407,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -371,7 +461,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -424,7 +514,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzY5MDYsImV4cCI6MTU5MDMyMzMwNiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.qmkpWORbusXs5uhWZTS5Bsfyaeu1-Tf2eQ7RtMYIQ9Rf797eSKdfh9mA5ZIYNXzMBfVrz8xnQzkHsp6o_ud2a6luVSVUlGW5nq1sFJotmx5p4DmQD0vnY3ADEjRPae4xiJkMiwvOVQYQjzyQbT3y8CyYtDwfiCoRu5q_jZ8EztOwcMoy0iR6HAEd9kct-gIayDgqn709GEMLo-_Egd62iHrEMO93PvUFqeCzRP7x2PBUWk0qz2DXyBdFc6TrgF-sLUuj0NrvP8HQpNZ1WNhko0fL21pANeoKisBJ_moc-wi9_rvuIe941t4NCFbIa7x0qFNSG0K3dB2IfJrDFcZcsw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjJmMGI2M2Y4MDAwYzhjMjA1NDgzIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY3NjksImV4cCI6MTU5MDM1MzE2OSwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.HB9ZhyaA4KWUsqxxw8ihzaicEZLTDbJJjRhbSRW9Q2-oMU7tmOOv8OTx0cYPTqMUj_T6EhaKU-93i5Bux_EOQfsh3PKMoEgcRDd965paOiCVY7lHTwBh9T3LVP1xhWo3UP94Ed8w3kAW6S3Fk_USVY8AM7rPt4FCSCfhxhDl1bp2fstW24zTZhKH22mp1dxUszsSgWoenaikYF0iJPvwBlNlZbaPdxydGztgsq7C9_UvxSA10gkouZAwTSXIp4a2EloMQVujbRTO6RzenCN6vLe5AcAL_ZaVGuTsKljIBnXTceqwn020lqe-SmKQ7r0MNiIFuknEdOBhWA7oGwaKhg",
 									"type": "string"
 								}
 							]
@@ -517,7 +607,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -534,6 +624,51 @@
 							],
 							"path": [
 								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f9ac60b-440f-419e-a02f-34f0071b82a1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-app-shalini.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"capstone-app-shalini",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
 							]
 						}
 					},
@@ -566,7 +701,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -583,6 +718,51 @@
 							],
 							"path": [
 								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "76cfa058-305b-4166-94f7-0497d5fedb99",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-app-shalini.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"capstone-app-shalini",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
 							]
 						}
 					},
@@ -610,7 +790,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -642,7 +822,7 @@
 					"response": []
 				},
 				{
-					"name": "/actors",
+					"name": "/actors/4",
 					"event": [
 						{
 							"listen": "test",
@@ -663,7 +843,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -671,7 +851,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://capstone-app-shalini.herokuapp.com/actors/42",
+							"raw": "https://capstone-app-shalini.herokuapp.com/actors/4",
 							"protocol": "https",
 							"host": [
 								"capstone-app-shalini",
@@ -680,14 +860,14 @@
 							],
 							"path": [
 								"actors",
-								"42"
+								"4"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/actors",
+					"name": "/actors/1",
 					"event": [
 						{
 							"listen": "test",
@@ -713,7 +893,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -746,7 +926,7 @@
 					"response": []
 				},
 				{
-					"name": "movies",
+					"name": "/movies/1",
 					"event": [
 						{
 							"listen": "test",
@@ -772,7 +952,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -826,7 +1006,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -858,7 +1038,7 @@
 					"response": []
 				},
 				{
-					"name": "/movies",
+					"name": "/movies/3",
 					"event": [
 						{
 							"listen": "test",
@@ -879,7 +1059,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzcyMDcsImV4cCI6MTU5MDMyMzYwNywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.noZdLEbZrhYQbYcuA2RIvJYupMVEYmSzpvMoOEwRy1HZ6TDJcRF5ITacvKlX9mvCna66gQRP31tluCs1NAfTHmpo1UMbsdAW6KQOiE0RuPrrfLjwih8UB-56Hw2S0pfz3WyCcspTlt1CZ2l03fwfafAT_OCGaJe1VOiSNw3k9abWyWfBvf3zpMiv_kzglkI65mUXwtixE5bIeynYEsT2Jmh3KYAyCPlxYBiFWfXNamsISnugohXyFJJXuPi2YBwIfzUHU7NNOuvT2_XKGAujh0V6miFNLiePtR5v3jvCc0UL2rk8rJGSfQYY-7mgftZpYdcTa8FvLiybEsb_7kB0Gw",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5YjMxMTZkZTQzMWEwYzhkNjNmZDQ2IiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjY5NDMsImV4cCI6MTU5MDM1MzM0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.CRBRtv3aj4QoQ6BjNt9bSUFWPHT9xtNnh-wGta_zlRBOgAjtsPiz8hLKy2Tsh-PO1BbffExc_xSptutDh_gZpFO94hOl3JwldH5kjqU5ghudLPWfTyn2-_YuLAyZRnag2QQDlmvowy6a5uOVS0B-ODGmFS7iG5YCFA6AXlkJOJcsgykYqBzltS1NFI7L86PJa0ADdCUSgxPigBa4o36CgdNga7kkAqZVfV10DhIloYCoLPsZOeTvVlURIRWghAaYd2dlih-v7x-zuMvhxUsGOOYhVuMTgKkXb5nII-Zca3kVhfwNtGLNWobHu1nyzaBOAwbxeV0F5sX711ChcRt9tg",
 									"type": "string"
 								}
 							]
@@ -887,7 +1067,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://capstone-app-shalini.herokuapp.com/movies/41",
+							"raw": "https://capstone-app-shalini.herokuapp.com/movies/3",
 							"protocol": "https",
 							"host": [
 								"capstone-app-shalini",
@@ -896,7 +1076,7 @@
 							],
 							"path": [
 								"movies",
-								"41"
+								"3"
 							]
 						}
 					},
@@ -972,7 +1152,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -989,6 +1169,51 @@
 							],
 							"path": [
 								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c6113863-656d-47c5-bdbc-032b57781e4e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-app-shalini.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"capstone-app-shalini",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
 							]
 						}
 					},
@@ -1021,7 +1246,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -1038,6 +1263,51 @@
 							],
 							"path": [
 								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1b5c9242-0591-4773-9277-97ac82da8d61",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-app-shalini.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"capstone-app-shalini",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
 							]
 						}
 					},
@@ -1065,7 +1335,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -1097,7 +1367,7 @@
 					"response": []
 				},
 				{
-					"name": "/actors",
+					"name": "/actors/5",
 					"event": [
 						{
 							"listen": "test",
@@ -1118,7 +1388,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -1126,7 +1396,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://capstone-app-shalini.herokuapp.com/actors/43",
+							"raw": "https://capstone-app-shalini.herokuapp.com/actors/5",
 							"protocol": "https",
 							"host": [
 								"capstone-app-shalini",
@@ -1135,14 +1405,14 @@
 							],
 							"path": [
 								"actors",
-								"43"
+								"5"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/actors",
+					"name": "/actors/1",
 					"event": [
 						{
 							"listen": "test",
@@ -1168,7 +1438,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -1201,7 +1471,7 @@
 					"response": []
 				},
 				{
-					"name": "movies",
+					"name": "/movies/1",
 					"event": [
 						{
 							"listen": "test",
@@ -1227,7 +1497,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -1281,7 +1551,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -1313,7 +1583,7 @@
 					"response": []
 				},
 				{
-					"name": "/movies",
+					"name": "/movies/3",
 					"event": [
 						{
 							"listen": "test",
@@ -1334,7 +1604,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyMzczNTYsImV4cCI6MTU5MDMyMzc1NiwiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.fpIVC08mNx_cSdUMQ2S8EvknPfhT0Ta-dYFgFVrIzTTB1ylVPVlW8oEM3pRRyBBXfY9IYsfKpRv4UQLbCQHRy4rzWWvEI2ZPQBGQzUdEZUg39V6kDBkrL9DigCz5jkIAvpM0sRF9EPYKkUozkNobiS8PZT2qeNDXC9r0vKX4beFeETPFtNtq61ZoXxqhrn97uPlEO5U6BPfZRJ5lfvgZxCX_2OAp_35Qgq0KUW_S6sxUN9Urc6uGhJ1vD860QGMrLuqUgas1cYjLScBOpy5AMLwMFVJI6UNCeqZCuqMZeDL2kk25LoAIvJ7YpF5B23_sMyVVBqp3ME02bmp-odZWbA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJ4MnRCdnd5T2ZNRUdnRVlwX3VoRSJ9.eyJpc3MiOiJodHRwczovL3NoYWxpbmktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU5NTkwZTAzNDdlYjAwYzE3MTkyNGEwIiwiYXVkIjoiQ2Fwc3RvbmVBUEkiLCJpYXQiOjE1OTAyNjcwNDMsImV4cCI6MTU5MDM1MzQ0MywiYXpwIjoieHFTZkNVdFNzVnVXMkk0VHBtbVhCOEtENTRaRUZWUFAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.eX0juTePnvTx6eZVphVDJQ9iy-iKOTowPbplrU53QHFnMy6yUATK7p8y46rrD7ASaptpY-0gKeEgWg3DEwW_5uD0ra9tH6DbJ69xw7cbAqkjjpwbFsPRxWgHgQXGE3uEqafDuLPSR2NxLhw-_sHfKRenVlfBdgAeSpp8O9R8-p5fJv7kDoUQv-A0We3qUdLhkqRYBL1y5dnoQtC3tcVoYCWfrfXcC1f33OrW2K76XjmcGVv100y6ydMyAwfhOkxYoHTyNeH5rB0_h9uwg3tO81QlCKHX9KlWvN49OXm1t8MriGuHmJkkFfkmLBvpqh8_lsUp1p7fFYQneBMSPto2OQ",
 									"type": "string"
 								}
 							]
@@ -1342,7 +1612,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://capstone-app-shalini.herokuapp.com/movies/41",
+							"raw": "https://capstone-app-shalini.herokuapp.com/movies/3",
 							"protocol": "https",
 							"host": [
 								"capstone-app-shalini",
@@ -1351,7 +1621,7 @@
 							],
 							"path": [
 								"movies",
-								"41"
+								"3"
 							]
 						}
 					},
