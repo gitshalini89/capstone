@@ -52,15 +52,28 @@ https://capstone-app-shalini.herokuapp.com/
 
 1. To run the tests locally, make sure you have PostgreSQL installed, https://www.postgresql.org/
 2. Create a test postgre database.
-3. Setup the environment variables as mentioned in config_settings.env file
-    * DATABASE_URL - Update the datatabase name, user name, password
-    * TOKEN_TEST - Set up this value as it is. This is the Bearer token generated from AUTH0 for the roles - Executive Producer
+3. Setup the 2 environment variables as mentioned in config_settings.env file locally by running below commands. 
+
+    * DATABASE_URL - Update the datatabase name, user name, password, port #
+
+        ```bash
+        export DATABASE_URL=<Refer to the config_settings.env file and update your database parameters>
+        ```
+
+    * TOKEN_TEST - Copy the value from config_settings.env file. This is the Bearer token generated from AUTH0 for the role - Executive Producer which is allowed to run all endpoints.
+
+        ```bash
+        export TOKEN_TEST=<Copy/Paste from config_settings.env file as it is>
+        ```
+
 4. After setting up environment variables, run the below command. Make sure you are in the folder where test_app.py file is present.
 
-```bash
-python test_app.py
-```
-Note: Run the test only after setting up the environment variables correctly so that all tests will be successful in first attempt. Else, you may have to update the ID field of tables accordingly. 
+    ```bash
+        python test_app.py
+    ```
+
+#### Note:
+Run the test only after setting up the environment variables correctly so that all tests will be successful in first attempt. Else, you may have to update the ID field of tables accordingly for delete endpoints. 
 
 ### Test using Postman
 
