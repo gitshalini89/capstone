@@ -49,9 +49,10 @@ def create_app(test_config=None):
         u_id = kwargs['actor_id']
 
         try:
-            actors = Actors.query.filter(Actors.id == u_id).one_or_none()
+            actor = Actors.query.filter(Actors.id == u_id).one_or_none()
+            actors = [d.format() for d in actor]
 
-            if actors is None:
+            if len(actors) == 0:
                 abort(404)
 
             return jsonify({
@@ -87,9 +88,10 @@ def create_app(test_config=None):
         u_id = kwargs['movie_id']
 
         try:
-            movies = Movies.query.filter(Movies.id == u_id).one_or_none()
+            movie = Movies.query.filter(Movies.id == u_id).one_or_none()
+            movies = [d.format() for d in movie]
 
-            if movies is None:
+            if len(movies) == 0:
                 abort(404)
 
             return jsonify({
