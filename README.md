@@ -4,9 +4,9 @@
 
 This project is the final project of the Udacity Full Stack Developer Nano Degree. The goal of this project is to deploy a Flask application with Heroku/PostgreSQL and enable Role Based Authentication and roles-based access control git (RBAC) with Auth0 (third-party authentication systems).
 
-I decided to implement a RESTful for a Casting Agency app where that is responsible for creating movies and managing and assigning actors to those movies.
+I decided to implement a RESTful API for a Casting Agency that is responsible for creating movies and managing and assigning actors to those movies.
 
-Roles:
+### Roles:
 1. Casting Assistant
 2. Casting Director
 3. Executive Producer
@@ -33,8 +33,8 @@ https://capstone-app-shalini.herokuapp.com/
 1. To run the tests locally, make sure you have PostgreSQL installed, https://www.postgresql.org/
 2. Create a test postgre database.
 3. Setup the environment variables as mentioned in config_settings.env file
-    a. DATABASE_URL - Update the datatabase name, user name, password
-    b. TOKEN_TEST - Set up this value as it is. This is the Bearer token generated from AUTH0 for the roles - Executive Producer
+    * DATABASE_URL - Update the datatabase name, user name, password
+    * TOKEN_TEST - Set up this value as it is. This is the Bearer token generated from AUTH0 for the roles - Executive Producer
 4. After setting up environment variables, run the below command. Make sure you are in the folder where test_app.py file is present.
 
 ```bash
@@ -63,51 +63,58 @@ newman run Capstone.postman_collection.json
 
 Errors are returned as JSON objects in the following format:
 
+```json
 {
     "success": False, 
     "error": 404,
     "message": "Resource Not Found"
 }
+```
 
 The API will return these error types when requests fail:
-400: bad request
-404: Resource not found
-422: unprocessable
-500: Internal Server Error
+* 400: bad request
+* 404: Resource not found
+* 422: unprocessable
+* 500: Internal Server Error
 
 If the route requires authentification and the request fails, it will return:
-401: "authorization_header_missing"
-400: "invalid_claims"
-403: "unauthorized"
+* 401: "authorization_header_missing"
+* 400: "invalid_claims"
+* 403: "unauthorized"
 
 ### Roles and Permissions
 
 #### Casting Assistant 
-• Can view actors and movies
+    • Can view actors and movies
 
 #### Casting Director 
-• All permissions a Casting Assistant has and… 
-• Add or delete an actor from the database 
-• Modify actors or movies
+    • All permissions a Casting Assistant has 
+    • Add or delete an actor from the database 
+    • Modify actors or movies
 
 #### Executive Producer
-• All permissions a Casting Director has and… 
-• Add or delete a movie from the database
+    • All permissions a Casting Director has 
+    • Add or delete a movie from the database
 
 ### Endpoints
 
 #### GET /
 
-No authentication required. This will return
+No authentication required. This is to check if the APP is up and running. 
 
+```json
 {
     "Message": "Welcome to Casting Agency App"
 }
+```
 
 #### GET /actors (Auth required)
 
-Returns details of all actors. Sameple output below. 
+Returns details of all actors.
 
+Sample output:
+
+```json
 {
     "actors": [
         {
@@ -125,11 +132,15 @@ Returns details of all actors. Sameple output below.
     ],
     "success": true
 }
+```
 
 #### GET /actors/<actor_id> (Auth required)
 
-Returns actor details for the given id. Sameple output below. 
+Returns actor details for the given id.
 
+Sample output:
+
+```json
 {
     "actors": {
         "age": 25,
@@ -139,11 +150,15 @@ Returns actor details for the given id. Sameple output below.
     },
     "success": true
 }
+```
 
 #### GET /movies (Auth required)
 
-Returns details of all movies. Sameple output below. 
+Returns details of all movies.
 
+Sample output: 
+
+```json
 {
     "movies": [
         {
@@ -159,11 +174,15 @@ Returns details of all movies. Sameple output below.
     ],
     "success": true
 }
+```
 
 #### GET /movies/<movie_id> (Auth required)
 
-Returns movies details for the given id. Sameple output below. 
+Returns movies details for the given id. 
 
+Sample output: 
+
+```json
 {
     "movies": {
         "id": 1,
@@ -172,62 +191,87 @@ Returns movies details for the given id. Sameple output below.
     },
     "success": true
 }
+```
 
 #### POST /actors (Auth required)
 
-Add new actor. Sample JSON input below
+Add a new actor.
 
+Sample input:
+
+```json
 {
 	"name": "John",
 	"age": "26",
 	"gender": "male"
 }
+```
 
 #### POST /movies (Auth required)
 
-Add new movie. Sample JSON input below
+Add a new movie.
 
+Sample input:
+
+```json
 {
 	"title": "Toy Story",
 	"releasedate": "20-07-2015"
 }
+```
 
 #### PATCH /actors/<actor_id> (Auth required)
 
-Update existing actor. Sample JSON input below
+Update the existing actor. 
 
+Sample input:
+
+```json
 {
 	"name": "Dany",
 	"age": "25"
 }
+```
 
 #### PATCH /movies/<movie_id> (Auth required)
 
-Update existing movie. Sample JSON input below
+Update the existing movie. 
 
+Sample Input:
+
+```json
 {
 	"title": "Frozen"
 }
+```
 
 #### DELETE /actors/<actor_id> (Auth required)
 
-Delete existing actor. Sample Output below
+Delete the existing actor.
 
+Sample Output:
+
+```json
 {
     "deleted_actor_id": 35,
     "message": "Actor successfully deleted!",
     "success": true
 }
+```
 
 #### DELETE /movies/<movie_id> (Auth required)
 
-Delete existing movie. Sample Output below
+Delete the existing movie.
 
+Sample Output:
+
+```json
 {
     "deleted_movie_id": 34,
     "message": "Movie successfully deleted!",
     "success": true
 }
+```
 
 ### AUTHORS
 
